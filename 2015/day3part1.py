@@ -9,6 +9,7 @@ def main():
     e=0
     for x in range(0,len(bigString)):
         d=bigString[e]
+        c=(str(a)+','+str(b))
         if d=='^':
             a=a+1
         if d=='v':
@@ -17,7 +18,6 @@ def main():
             b=b+1
         if d=='<':
             b=b-1
-        c=(str(a)+','+str(b))
         e=e+1
         if c not in emptyList:
             emptyList.append(c)
