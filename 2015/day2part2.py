@@ -1,4 +1,4 @@
-#Advent of Code Day 2 Part 1
+#Advent of Code Day 2 Part 2
 def main():
     with open('day2input.txt', 'r') as reader:
         bigList=reader.readlines()
