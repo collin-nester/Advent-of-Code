@@ -1,25 +1,32 @@
-#Advent of Code Day 1 Part 1
-import math
+#Advent of Code Day 2 Part 1
+import csv
 
-def main():
+def opcode_1():
+    y = int(intcode[int(intcode[x])]) + int(intcode[int(intcode[x + 1])])
+    intcode[int(intcode[x + 2])] = y
 
-    fuel_weights = [] #Creates a list that will contain each individual fuel weight
+def opcode_2():
+    y = int(intcode[int(intcode[x])]) * int(intcode[int(intcode[x + 1])])
+    intcode[int(intcode[x + 2])] = y
 
-    with open('input.txt', 'r') as reader:
-        module_weights = reader.readlines() #Turns the input into a list
-
-    for i in module_weights: #Calculates each individual weight and adds it to the end of the fuel_weights list
-        i = int(i)
-        fuel_weight = ( i - ( i % 3 ) ) / 3 - 2
-        print( str(i) + " " + str(fuel_weight) )
-        fuel_weights.append(fuel_weight)
+with open('input.txt', 'r') as reader:
+    intcode = reader.readlines()
     
-    total_weight = 0 #Creates the variable total_weight, which will eventually hold 
+    intcode = intcode[0].split(",")
 
-    for i in fuel_weights:
-        total_weight = i + total_weight
+    intcode[1] = 12
+    intcode[2] = 2
+    x = 1
 
-    
-    print(total_weight)
-
-main()
+    for i in intcode:
+        if x % 4 - 1 == 0:
+            if int(i) == 1:
+                opcode_1()
+            elif int(i) == 2:
+                opcode_2()
+            elif int(i) == 99:
+                break
+            else:
+                print("Your code sucks " + str(i))
+        x = x + 1
+    print(intcode)
