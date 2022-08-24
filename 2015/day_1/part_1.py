@@ -1,6 +1,6 @@
 #Advent of Code Day 1 Part 1 2015
 def main():
-    with open('day1input.txt', 'r') as reader:
+    with open('2015/day_1/input.txt', 'r') as reader:
         bigList=reader.readlines()
     letter=bigList[0]
     x=0
