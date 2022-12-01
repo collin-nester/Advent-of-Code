@@ -1,7 +1,7 @@
 #Advent of Code Day 5 Part 1
 def main():
     a=0
-    with open('day5input.txt', 'r') as reader:
+    with open('input.txt', 'r') as reader:
         bigList=reader.readlines()
     for b in bigList:
         c=b.count('a')
