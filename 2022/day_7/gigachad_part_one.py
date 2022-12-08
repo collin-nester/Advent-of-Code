@@ -149,6 +149,7 @@ def add_to_total(directory_sum):
         sum_of_directories += directory_sum[0]
 
 def add_all_the_things():
+    print(sum_list)
     for i in sum_list:
         add_to_total(i)
 
@@ -157,13 +158,4 @@ with open("2022/day_7/input.txt", "r") as reader:
 
 organize_files()
 add_all_the_things()
-
-total_space_available = 70000000
-total_space_needed = 30000000
-space_needed_to_be_freed = directory_list[0] +  total_space_needed - total_space_available
-smallest_file = 10000000000
-for i in sum_list:
-    file_difference = i[0] - space_needed_to_be_freed
-    if i[0] <= smallest_file and file_difference >= 0:
-        smallest_file = i[0]
-print(smallest_file)
+print(sum_of_directories)

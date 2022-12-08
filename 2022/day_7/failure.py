@@ -81,7 +81,6 @@ def add_to_total(directory_sum):
 
 def scan_for_small_directories(directorylist):
     for i in directorylist:
-        print(directorylist)
         if type(i) != int:
             scan_for_small_directories(i)
         else:
