@@ -9,7 +9,7 @@ screen = np.empty(240)
 strength_total = 0
 
 def add_pixel(pixel_number, cycle):
-    if cycle % 40 == pixel_number or cycle % 40 == pixel_number + 2 or cycle % 40 == pixel_number + 1:
+    if cycle % 40 == pixel_number % 40 or cycle % 40 == pixel_number + 1 or cycle % 40 == pixel_number + 2:
         screen[cycle - 1] = "0"
     else:
         screen[cycle - 1] = "1"
@@ -29,8 +29,8 @@ horizontal_strip = ""
 for i in screen:
         for j in i:
             if j == 0:
-                horizontal_strip += ' '
-            if j == 1:
                 horizontal_strip += '■'
+            if j == 1:
+                horizontal_strip += ' '
         print(horizontal_strip)
         horizontal_strip = ""
