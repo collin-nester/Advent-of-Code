@@ -41,16 +41,10 @@ while accessible_rolls != prev_accessible_rolls:
             if input[row][col] == "@" and number_around(input,row,col) < 4:
                 accessible_rolls += 1
                 if col == 0:
-                    print(input[row])
                     input[row] = "." + input[row][1:]
-                    print(input[row])
                 elif col == len(input[0]):
-                    print(input[row])
                     input[row] = input[row][:-2] + "."
-                    print(input[row])
                 else:
-                    print(input[row])
                     input[row] = input[row][:col] + "." + input[row][col+1:]
-                    print(input[row])
 
 print(accessible_rolls)
